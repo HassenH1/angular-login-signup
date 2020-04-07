@@ -1,0 +1,30 @@
+nav {
+  background: rgb(70, 64, 64);
+  display: flex;
+  justify-content: space-evenly;
+  height: 3rem;
+  color: white;
+}
+
+.signup {
+  /* padding: 1px; */
+  margin: auto 0;
+}
+
+.login {
+  /* padding: 1px; */
+  margin: auto 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  background-color: #ffffff;
+  color: black;
+  /* padding: 10px; */
+  /* font-size: 14px; */
+  margin: auto 0;
+}
