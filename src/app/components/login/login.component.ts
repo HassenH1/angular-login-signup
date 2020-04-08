@@ -12,14 +12,14 @@ export class LoginComponent implements OnInit {
   password = ""
   error = ""
 
-  constructor(private fetch: FetchCallsService ) { }
+  constructor(private fetch: FetchCallsService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(`email: ${this.email}, password: ${this.password}`)
-    if(this.email === "" || this.password === ""){
+    if (this.email === "" || this.password === "") {
       this.error = "All fields must be completed"
       setTimeout(() => {
         this.error = ""
@@ -35,5 +35,4 @@ export class LoginComponent implements OnInit {
       this.password = ""
     })
   }
-
 }
