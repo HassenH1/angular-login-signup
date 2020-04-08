@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
       return console.log("password must match")
     }
 
-    if(this.password === "" || this.passwordTwo === "" || this.email){
+    if(this.password === "" || this.passwordTwo === "" || this.email === ""){
       this.error = "Fields cannot be empty"
       setTimeout(() => {
         this.error = ""

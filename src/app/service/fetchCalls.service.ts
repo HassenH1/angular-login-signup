@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +18,6 @@ export class FetchCallsService {
   constructor(private http: HttpClient) { }
 
   SignUpUser(user){
-    return this.http.post(`${this.BASE_URL}/signup` , {
-      body: JSON.stringify(user)
-    })
+    return this.http.post(`${this.BASE_URL}/users/signup`, user)
   }
 }
