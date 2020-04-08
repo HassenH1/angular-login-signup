@@ -3,6 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.post('/signup', function(req, res, next) {
+  console.log(req.body)
   console.log('sign up wokring');
 });
 
