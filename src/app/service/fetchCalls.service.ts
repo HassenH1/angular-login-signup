@@ -20,4 +20,8 @@ export class FetchCallsService {
   SignUpUser(user){
     return this.http.post(`${this.BASE_URL}/users/signup`, user)
   }
+
+  userLogin(user){
+    return this.http.post(`${this.BASE_URL}/users/login`, user)
+  }
 }

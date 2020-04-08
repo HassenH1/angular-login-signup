@@ -1,1 +1,21 @@
-<p>login works!</p>
+<form [ngStyle]="{'border': '1px solid #ccc', 'width': '30%', 'margin': '0 auto' }" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1>Login</h1>
+    <p>Already have an Account? Login.</p>
+    <p [ngStyle]="{ 'color': 'red'}">{{ error }}</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="password" required>
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn">Login</button>
+    </div>
+  </div>
+</form>
+
+<p>Email: {{ email }}</p>
+<p>Password: {{ password }}</p>

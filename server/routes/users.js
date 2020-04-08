@@ -20,7 +20,15 @@ router.post('/signup', function (req, res, next) {
 });
 
 router.post('/login', (req,res) => {
-  console.log(req.body)
+  const { email, password } = req.body
+  req.collection.findOne({
+    email: email,
+    password: password
+  })
+    .then(result => console.log(result))
+    .catch(err => res.status(400).json({
+      message: "No user found"
+    }))
 })
 
 module.exports = router;
