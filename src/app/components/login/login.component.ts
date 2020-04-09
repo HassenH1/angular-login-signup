@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { FetchCallsService } from 'src/app/service/fetchCalls.service'
 
 @Component({
@@ -11,8 +12,9 @@ export class LoginComponent implements OnInit {
   email = ""
   password = ""
   error = ""
+  @Output() childEvent = new EventEmitter()
 
-  constructor(private fetch: FetchCallsService) { }
+  constructor(private fetch: FetchCallsService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +32,8 @@ export class LoginComponent implements OnInit {
       email: this.email,
       password: this.password
     }
+    this.router.navigate(['']);
+    this.childEvent.emit(user.email)
     this.fetch.userLogin(user).subscribe(() => {
       this.email = ""
       this.password = ""

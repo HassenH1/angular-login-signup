@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
 
 <h2>Testing Signup/Login</h2>
-<router-outlet></router-outlet>
+<h3>Welcome {{ email }}</h3>
+<router-outlet (childEvent)="email=$event"></router-outlet>
